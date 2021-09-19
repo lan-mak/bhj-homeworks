@@ -19,9 +19,9 @@ let hours = document.getElementById('hh');
 let minutes = document.getElementById('mm');
 let second = document.getElementById('ss');
 
-let timer = setInterval(test, 1000);
+let timer = setInterval(actionTimer, 1000);
 
-function test() {
+function actionTimer() {
   second.textContent -= 1;
 
   if (+second.textContent === 0 && +minutes.textContent > 0) {
