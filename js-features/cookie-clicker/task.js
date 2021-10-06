@@ -10,9 +10,9 @@ function score() {
   arrScore.push(Date.now());
 
   if (arrScore.length > 1) {
-    let speedClick = 1/((arrScore[1] - arrScore[0])/1000)
-    scoreClick.textContent = speedClick.toFixed(2)
-    arrScore.shift()
+    let speedClick = 1/((arrScore[1] - arrScore[0])/1000);
+    scoreClick.textContent = speedClick.toFixed(2);
+    arrScore.shift();
   }
 }
 
@@ -31,12 +31,12 @@ cockie.onclick = () => {
   if (sizeImage === 1) {
     cockie.width = 180;
     sizeImage = 0;
-    score()
+    score();
     // checkScore();
   } else {
     cockie.width = 200;
     sizeImage = 1;
-    score()
+    score();
     // checkScore();
   }
   counter.textContent = +counter.textContent + 1;
