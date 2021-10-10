@@ -11,6 +11,7 @@ modalMain.className = 'modal modal_active';
 
 function close(item) {
   showSuccess.onclick = function() {
+    modalMain.className = 'modal';
     modalSuccess.className = 'modal modal_active';
   }
 
