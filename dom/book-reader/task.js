@@ -10,10 +10,10 @@ function onClick(event) {
     event.preventDefault();
     let controlElement = event.target;
     let book = this.closest('#book');
-    let classLengthBook = book.className.split(' ');
+    let classFontSize = `book_fs-${this.dataset.size}`
 
-    if (controlElement.classList.contains('font-size_small') && classLengthBook.length === 1) {
-        let classFontSize = book.className + `_fs-${this.dataset.size}`;
+    if (controlElement.classList.contains('font-size_small') && !book.classList.contains('classFontSize')) {
+        book.className = 'book';
         book.classList.add(classFontSize);
     }
 
@@ -21,8 +21,8 @@ function onClick(event) {
         book.className = 'book';
     }
 
-    if (controlElement.classList.contains('font-size_big') && classLengthBook.length === 1) {
-        let classFontSize = book.className + `_fs-${this.dataset.size}`;
+    if (controlElement.classList.contains('font-size_big') && !book.classList.contains('classFontSize')) {
+        book.className = 'book';
         book.classList.add(classFontSize);
     }
 }
