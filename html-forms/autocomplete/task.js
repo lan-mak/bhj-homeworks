@@ -68,6 +68,7 @@ class Autocomplete {
   }
 
   getMatches( text ) {
+
     /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
@@ -81,12 +82,19 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
+
+    let inputSelect = Array.from(this.input.options);
+    let wordBook = [];
+
+    inputSelect.forEach(search);
+
+    function search(item) {
+      if (item.textContent.includes(text)) {
+        wordBook.push({text: item.textContent, value: item.value});
       }
-    ];
+    }
+
+    return wordBook;
   }
 }
 
