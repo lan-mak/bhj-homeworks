@@ -5,15 +5,20 @@ document.addEventListener('change', onChange);
 function onChange(event) {
   let element = event.target;
   let rubric = element.closest('.interest');
-  let subRubric = rubric.querySelectorAll('.interests_active .interest__check');
+  let subRubric = rubric.querySelectorAll('.interest__check');
 
-  subRubric.forEach(action);
-
-  function action (item) {
-    if (item.checked) {
-      item.checked = false;
-    } else {
-      item.checked = true;
-    }
+  if (element.closest('.interests_active') === null) {
+    subRubric.forEach(item => {
+      if (element.checked) {
+        item.checked = true;
+      } else {
+        item.checked = false;
+      }
+    });
+  } else {
+    subRubric.forEach(item => {
+      let perentRubric = item.closest('.interests .interests_active').previousElementSibling;
+      perentRubric.querySelector('.interest__check').checked = true;
+    });
   }
 }
