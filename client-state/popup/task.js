@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
   let openModalWindow = document.querySelector('#subscribe-modal');
   let closeModalWindow = document.querySelector('.modal__close');
 
-    if (document.cookie === '' || modalCloseCookie !== 'modalWindow=close') {
+    if (document.cookie === '' || modalCloseCookie() !== 'modalWindow=close') {
       openModalWindow.classList.add('modal_active');
       closeModalWindow.addEventListener('click', () => {
         openModalWindow.classList.remove('modal_active');
